@@ -1,8 +1,8 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 import TodoForm from "./TodoForm";
 import ToDoList from "./ToDoList";
 import { ITodo } from "./types/Todo";
+import functions from "./functions";
 
 function App() {
   const todosInDb: ITodo[] = [
@@ -33,6 +33,24 @@ function App() {
   const handleAdd = (todo: ITodo) => {
     setTodos([...todos, todo]);
   };
+
+  // Importeras endast för att testa typescript från functions.ts
+  const {
+    max,
+    landscape,
+    rectangleArea,
+    triangleArea,
+    circleArea,
+    tellFortune,
+    calculateDogAge,
+    dogAgeWithGivenFactor,
+    daysOfSupplies,
+    toCelsius,
+    toFahrenheit,
+    ageInSeconds,
+    area,
+    checkSpeed,
+  } = functions;
 
   return (
     <div>
